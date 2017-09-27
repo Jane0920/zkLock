@@ -13,7 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class OrderServiceImpl implements Runnable {
 
     private static Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
-    private static final int NUM = 40;
+    private static final int NUM = 50;
 
     private OrderCodeGenerator orderCodeGenerator = new OrderCodeGenerator();
 
@@ -24,7 +24,10 @@ public class OrderServiceImpl implements Runnable {
     //private static Lock lock = new ReentrantLock();
 
     //通过zookeeper的分布式锁
-    private Lock lock = new ZookeeperLock();
+    //private Lock lock = new ZookeeperLock();
+
+    //优化后的zookeeper的分布式锁
+    private Lock lock = new ZookeeperLockImprove();
 
     /**
      * 生成订单号
