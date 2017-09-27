@@ -13,9 +13,9 @@ import java.util.concurrent.locks.ReentrantLock;
 public class OrderServiceImpl implements Runnable {
 
     private static Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
-    private static final int NUM = 10;
+    private static final int NUM = 40;
 
-    private static OrderCodeGenerator orderCodeGenerator = new OrderCodeGenerator();
+    private OrderCodeGenerator orderCodeGenerator = new OrderCodeGenerator();
 
     //同步工具类，线程并发发令枪
     private static CountDownLatch cdl = new CountDownLatch(NUM);

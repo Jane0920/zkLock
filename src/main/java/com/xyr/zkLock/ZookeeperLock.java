@@ -22,7 +22,7 @@ public class ZookeeperLock implements Lock {
 
     private static final Logger log = LoggerFactory.getLogger(ZookeeperLock.class);
 
-    private static CountDownLatch countDownLatch = null;
+    private CountDownLatch countDownLatch = null;
 
     private ZkClient client = new ZkClient(ZK_IP_PORT);
 
